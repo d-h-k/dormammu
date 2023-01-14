@@ -20,5 +20,6 @@ c++ http
   ```
 - 이외 개발환경 셋업시 참고
   - https://code.visualstudio.com/docs/cpp/CMake-linux
-  - 
+  - https://fascination-euna.tistory.com/entry/P4C-W4-W5-C%EC%96%B8%EC%96%B4%EB%A1%9C-HTTP-%EC%84%9C%EB%B2%84-%EA%B5%AC%ED%98%84
+  
 
