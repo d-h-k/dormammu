@@ -3,15 +3,21 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <unistd.h>
+#include <netdb.h>
+
 
 int main()
 {
     // server
     struct sockaddr_in server;
     memset(&server, 0, sizeof(server));
-    server.sin_addr.s_addr = inet_addr("www.kakaoenterprise.com");
+    //char * target = "kakaoenterprise.com";
+    // 도메인에서 gethostbyname 이용해야하는데 좀 걸릴듯
+    server.sin_addr.s_addr = inet_addr("210.127.253.73");
     server.sin_family = AF_INET;
     server.sin_port = htons(80); // HTTP uses port 80
+    
+//https://kakaoenterprise.com
     // Create a socket
     int server_socket = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -28,7 +34,8 @@ int main()
     }
 
     // Send the GET request
-    char request[] = "GET / HTTP/1.1\r\nHost: example.com\r\nConnection: close\r\n\r\n";
+    char request[] = 
+    "GET / HTTP/1.1\r\nHost: kakaoenterprise.com\r\nConnection: keep-alive\r\nAccept: */*\r\n\r\n";
     if (send(server_socket, request, strlen(request), 0) < 0)
     {
         printf("Error sending request\n");
