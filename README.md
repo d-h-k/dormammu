@@ -11,6 +11,7 @@ c++ http
 - Linux(Ubuntu)
   ```
   sudo apt update && sudo apt install build-essential gcc make cmake -y
+  sudo apt install libssl-dev
   ```
 - Windows 환경의 경우
   ```
@@ -21,5 +22,6 @@ c++ http
 - 이외 개발환경 셋업시 참고
   - https://code.visualstudio.com/docs/cpp/CMake-linux
   - https://fascination-euna.tistory.com/entry/P4C-W4-W5-C%EC%96%B8%EC%96%B4%EB%A1%9C-HTTP-%EC%84%9C%EB%B2%84-%EA%B5%AC%ED%98%84
-  
-
+  - http://theshybulb.com/2015/10/10/use-openssl-c-library.html
+  - https://medium.com/@timmykko/using-openssl-library-with-macos-sierra-7807cfd47892
+  - https://github.com/openssl/openssl

@@ -1,0 +1,23 @@
+cmake_minimum_required(VERSION 3.0)
+project(dormamu)
+MESSAGE ("PROJECT : " ${PROJECT_NAME} )
+# Download and build OpenSSL
+include(ExternalProject)
+
+SET (OPENSSL_SOURCES openssl)
+SET (OPENSSL_INCLUDE_DIRS openssl/include/openssl)
+# Link OpenSSL statically
+add_library(openssl STATIC ${OPENSSL_SOURCES})
+target_include_directories(openssl PRIVATE ${OPENSSL_INCLUDE_DIRS})
+
+SET (SOURCE main.c)
+SET (PROJECT_NAME dormamu)
+SET (CMAKE_VERBOSE_MAKEFILE true )
+SET (OPENSSL_USE_STATIC_LIBS TRUE)
+
+
+
+add_executable(main ${SOURCE})
+add_executable(http_client http_client.c)
+add_executable(https_client https_client.c)
+target_link_libraries(https_client openssl)
